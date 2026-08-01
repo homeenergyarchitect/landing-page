@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; connect-src https://plcrljomerrqygxmayxy.supabase.co;">
     <title>Home Energy Architect | Independent Solar & Battery Optimization</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -44,14 +45,19 @@
                 </div>
 
                 <div class="space-y-4">
+                    <!-- HONEYPOT FIELD (Anti-Bot Trap) -->
+                    <div style="display:none;" aria-hidden="true">
+                        <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+                    </div>
+
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Full Name</label>
-                        <input type="text" id="full_name" placeholder="e.g. Alex Smith" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
+                        <input type="text" id="full_name" maxlength="100" placeholder="e.g. Alex Smith" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Email Address</label>
-                        <input type="email" id="email" placeholder="alex@example.com.au" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
+                        <input type="email" id="email" maxlength="255" placeholder="alex@example.com.au" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -82,7 +88,7 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Top Energy Frustration</label>
-                        <textarea id="top_frustration" rows="3" placeholder="e.g. My bill is still high..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500"></textarea>
+                        <textarea id="top_frustration" maxlength="1000" rows="3" placeholder="e.g. My bill is still high..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500"></textarea>
                     </div>
 
                     <button type="button" onclick="executeSubmit()" id="submit-btn" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
@@ -104,13 +110,27 @@
 
     <script>
         async function executeSubmit() {
+            // Honeypot check (Silent failure for bots)
+            if (document.getElementById('website_url').value !== '') {
+                document.getElementById('form-container').classList.add('hidden');
+                document.getElementById('success-screen').classList.remove('hidden');
+                return;
+            }
+
             const fullName = document.getElementById('full_name').value.trim();
             const email = document.getElementById('email').value.trim();
             const state = document.getElementById('state').value;
             const frustration = document.getElementById('top_frustration').value.trim();
 
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
             if (!fullName || !email || !state || !frustration) {
-                alert("Please fill in all required fields (Name, Email, State, Frustration).");
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
                 return;
             }
 
@@ -144,13 +164,14 @@
                     document.getElementById('form-container').classList.add('hidden');
                     document.getElementById('success-screen').classList.remove('hidden');
                 } else {
-                    const errText = await response.text();
-                    alert("Submission error: " + errText);
+                    console.error("Database error code:", response.status);
+                    alert("Unable to submit form. Please check your details and try again.");
                     btn.disabled = false;
                     btn.textContent = 'Submit to Queue';
                 }
             } catch (err) {
-                alert("Network Fetch Error: " + err.message);
+                console.error("Network Exception:", err);
+                alert("Network error. Please try again later.");
                 btn.disabled = false;
                 btn.textContent = 'Submit to Queue';
             }
