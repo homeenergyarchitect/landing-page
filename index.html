@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive">
     <title>Home Energy Architect | Independent Solar & Battery Optimization</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -95,7 +96,7 @@
     <section id="how-it-works" class="max-w-5xl mx-auto px-6 py-16 border-t border-slate-800/80 bg-slate-900/30 rounded-3xl my-8">
         <div class="text-center max-w-2xl mx-auto mb-14">
             <h2 class="text-2xl md:text-3xl font-extrabold mb-4">What Home Energy Architect Does</h2>
-            <p class="text-slate-400">We don't sell solar panels, batteries, or invertor upgrades. We optimize the system you've already paid for.</p>
+            <p class="text-slate-400">We don't sell solar panels, batteries, or inverter upgrades. We optimize the system you've already paid for.</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
@@ -182,7 +183,6 @@
 
     <!-- SUPABASE CLIENT & SUBMISSION HANDLER -->
     <script>
-        // Replace these placeholder strings with your actual Supabase URL & Public Anon Key
         const SUPABASE_URL = 'https://YOUR_PROJECT_ID.supabase.co';
         const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
 
@@ -207,7 +207,6 @@
                 top_frustration: formData.get('top_frustration')
             };
 
-            // If Supabase keys aren't added yet, simulate success for initial visual test
             if (!supabase) {
                 setTimeout(() => {
                     msg.textContent = "You're in the queue! (Visual test mode—add your Supabase keys to start capturing real database rows).";
