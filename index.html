@@ -46,18 +46,18 @@
                 <div class="space-y-4">
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Full Name</label>
-                        <input type="text" id="full_name" placeholder="e.g. Alex Smith" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100">
+                        <input type="text" id="full_name" placeholder="e.g. Alex Smith" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Email Address</label>
-                        <input type="email" id="email" placeholder="alex@example.com.au" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100">
+                        <input type="email" id="email" placeholder="alex@example.com.au" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">State / Territory</label>
-                            <select id="state" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100">
+                            <select id="state" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
                                 <option value="" disabled selected>Select...</option>
                                 <option value="NSW">NSW</option>
                                 <option value="VIC">VIC</option>
@@ -72,7 +72,7 @@
 
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">System Setup</label>
-                            <select id="hardware_setup" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100">
+                            <select id="hardware_setup" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
                                 <option value="solar_only">Solar Only</option>
                                 <option value="solar_and_battery">Solar + Battery</option>
                                 <option value="considering_battery">Considering a Battery</option>
@@ -82,10 +82,10 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Top Energy Frustration</label>
-                        <textarea id="top_frustration" rows="3" placeholder="e.g. My bill is still high..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100"></textarea>
+                        <textarea id="top_frustration" rows="3" placeholder="e.g. My bill is still high..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500"></textarea>
                     </div>
 
-                    <button type="button" onclick="executeSubmit()" id="submit-btn" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-4 rounded-xl shadow-lg transition-all">
+                    <button type="button" onclick="executeSubmit()" id="submit-btn" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
                         Submit to Queue
                     </button>
                 </div>
@@ -96,7 +96,7 @@
                 <div class="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl flex items-center justify-center text-emerald-400 text-3xl mx-auto mb-4">✓</div>
                 <h3 class="text-2xl font-bold text-slate-100 mb-2">You're in the Queue!</h3>
                 <p class="text-slate-400 text-sm mb-6">Thanks! We've saved your details and will be in touch shortly.</p>
-                <button onclick="window.location.reload()" class="bg-slate-800 text-slate-200 font-semibold py-3 px-6 rounded-xl border border-slate-700 text-sm">Submit Another Response</button>
+                <button onclick="window.location.reload()" class="bg-slate-800 text-slate-200 font-semibold py-3 px-6 rounded-xl border border-slate-700 text-sm hover:bg-slate-700 transition-colors">Submit Another Response</button>
             </div>
 
         </div>
@@ -104,8 +104,6 @@
 
     <script>
         async function executeSubmit() {
-            alert("Button clicked! Starting submission...");
-
             const fullName = document.getElementById('full_name').value.trim();
             const email = document.getElementById('email').value.trim();
             const state = document.getElementById('state').value;
@@ -143,12 +141,11 @@
                 });
 
                 if (response.ok || response.status === 201) {
-                    alert("Submission successful! Updating UI...");
                     document.getElementById('form-container').classList.add('hidden');
                     document.getElementById('success-screen').classList.remove('hidden');
                 } else {
                     const errText = await response.text();
-                    alert("Supabase Error (" + response.status + "): " + errText);
+                    alert("Submission error: " + errText);
                     btn.disabled = false;
                     btn.textContent = 'Submit to Queue';
                 }
