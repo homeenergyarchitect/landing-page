@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; connect-src https://plcrljomerrqygxmayxy.supabase.co;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; connect-src https://plcrljomerrqygxmayxy.supabase.co;">
     <title>Home Energy Architect | Independent Solar & Battery Optimization</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -45,8 +45,8 @@
                 </div>
 
                 <div class="space-y-4">
-                    <!-- HONEYPOT FIELD (Anti-Bot Trap) -->
-                    <div style="display:none;" aria-hidden="true">
+                    <!-- HONEYPOT FIELD (Hidden using Tailwind 'hidden' class to prevent CSP inline style block) -->
+                    <div class="hidden" aria-hidden="true">
                         <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
                     </div>
 
