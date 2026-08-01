@@ -139,40 +139,85 @@
         <div class="bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden">
             <div class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-            <h2 class="text-2xl font-bold mb-2 text-center text-slate-100">Get Your Energy Data Checked</h2>
-            <p class="text-slate-400 text-sm text-center mb-8">Join the queue for our initial audit cohort. We'll analyze your setup and show you where you're losing money.</p>
+            <!-- FORM CONTAINER -->
+            <div id="form-container">
+                <h2 class="text-2xl font-bold mb-2 text-center text-slate-100">Get Your Energy Data Checked</h2>
+                <p class="text-slate-400 text-sm text-center mb-6">Join the queue for our initial audit cohort. We'll analyze your setup and show you where you're losing money.</p>
 
-            <form id="waitlist-form" class="space-y-5">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Full Name</label>
-                    <input type="text" name="full_name" required placeholder="e.g. Alex Smith" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors">
+                <!-- SERVICE REGION NOTICE -->
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3.5 mb-6 text-xs text-slate-400 text-center leading-relaxed">
+                    🇦🇺 <strong class="text-slate-200">Australian Competitive Retail Markets Only:</strong> Service is currently available for households in deregulation-enabled AEMO regions (<strong class="text-emerald-400">ACT, NSW, QLD, SA, VIC</strong>) where switching retail tariffs is supported.
                 </div>
 
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Email Address</label>
-                    <input type="email" name="email" required placeholder="alex@example.com.au" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors">
+                <form id="waitlist-form" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Full Name</label>
+                        <input type="text" name="full_name" required placeholder="e.g. Alex Smith" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Email Address</label>
+                        <input type="email" name="email" required placeholder="alex@example.com.au" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">State / Territory</label>
+                            <select name="state" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500 transition-colors">
+                                <option value="" disabled selected>Select...</option>
+                                <option value="NSW">NSW</option>
+                                <option value="VIC">VIC</option>
+                                <option value="QLD">QLD (SE QLD)</option>
+                                <option value="SA">SA</option>
+                                <option value="ACT">ACT</option>
+                                <option value="TAS">TAS</option>
+                                <option value="WA">WA (Regulated)</option>
+                                <option value="NT">NT (Regulated)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Current System Setup</label>
+                            <select name="hardware_setup" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500 transition-colors">
+                                <option value="solar_only">Solar Only</option>
+                                <option value="solar_and_battery">Solar + Battery</option>
+                                <option value="considering_battery">Considering a Battery</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">What is your #1 energy frustration?</label>
+                        <textarea name="top_frustration" rows="3" required placeholder="e.g. My quarterly bill is still $400 despite having an 8kW solar array and a battery..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors"></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/10">
+                        Submit to Queue
+                    </button>
+                </form>
+
+                <div id="status-message" class="hidden text-center mt-6 p-4 rounded-xl text-sm font-semibold"></div>
+            </div>
+
+            <!-- SUCCESS CONFIRMATION SCREEN (Hidden by default) -->
+            <div id="success-screen" class="hidden text-center py-6">
+                <div class="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl flex items-center justify-center text-emerald-400 text-3xl mx-auto mb-6">
+                    ✓
                 </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Current System Setup</label>
-                    <select name="hardware_setup" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500 transition-colors">
-                        <option value="solar_only">Solar Only</option>
-                        <option value="solar_and_battery">Solar + Battery</option>
-                        <option value="considering_battery">Considering a Battery</option>
-                    </select>
+                <h3 class="text-2xl font-bold text-slate-100 mb-3">You're in the Queue!</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                    Thanks for submitting your details. We've captured your response and will be in touch shortly with next steps for your energy data audit.
+                </p>
+                <div class="flex flex-col gap-3">
+                    <a href="#" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold py-3 px-6 rounded-xl border border-slate-700 transition-all text-sm">
+                        Return to Top
+                    </a>
+                    <button onclick="location.reload()" class="w-full bg-transparent text-slate-500 hover:text-slate-400 text-xs py-2 transition-colors">
+                        Submit another response
+                    </button>
                 </div>
+            </div>
 
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">What is your #1 energy frustration?</label>
-                    <textarea name="top_frustration" rows="3" required placeholder="e.g. My quarterly bill is still $400 despite having an 8kW solar array and a battery..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors"></textarea>
-                </div>
-
-                <button type="submit" id="submit-btn" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/10">
-                    Submit to Queue
-                </button>
-            </form>
-
-            <div id="status-message" class="hidden text-center mt-6 p-4 rounded-xl text-sm font-semibold"></div>
         </div>
     </section>
 
@@ -191,11 +236,12 @@
             supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         }
 
-
         document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
             const msg = document.getElementById('status-message');
+            const formContainer = document.getElementById('form-container');
+            const successScreen = document.getElementById('success-screen');
 
             btn.disabled = true;
             btn.textContent = 'Submitting...';
@@ -204,16 +250,20 @@
             const payload = {
                 full_name: formData.get('full_name'),
                 email: formData.get('email'),
+                state: formData.get('state'),
                 hardware_setup: formData.get('hardware_setup'),
                 top_frustration: formData.get('top_frustration')
             };
 
+            // Helper function to trigger success UI
+            const showSuccess = () => {
+                formContainer.classList.add('hidden');
+                successScreen.classList.remove('hidden');
+            };
+
             if (!supabase) {
                 setTimeout(() => {
-                    msg.textContent = "You're in the queue! (Visual test mode—add your Supabase keys to start capturing real database rows).";
-                    msg.className = 'text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 block text-center mt-6 p-4 rounded-xl text-sm font-semibold';
-                    e.target.reset();
-                    btn.textContent = 'Submitted ✓';
+                    showSuccess();
                 }, 800);
                 return;
             }
@@ -221,15 +271,12 @@
             const { error } = await supabase.from('leads').insert([payload]);
 
             if (error) {
-                msg.textContent = 'Error submitting. Please try again or check your keys.';
+                msg.textContent = 'Error submitting: ' + error.message;
                 msg.className = 'text-red-400 bg-red-500/10 border border-red-500/20 block text-center mt-6 p-4 rounded-xl text-sm font-semibold';
                 btn.disabled = false;
                 btn.textContent = 'Submit to Queue';
             } else {
-                msg.textContent = "You're in the queue! We'll be in touch shortly.";
-                msg.className = 'text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 block text-center mt-6 p-4 rounded-xl text-sm font-semibold';
-                e.target.reset();
-                btn.textContent = 'Submitted ✓';
+                showSuccess();
             }
         });
     </script>
