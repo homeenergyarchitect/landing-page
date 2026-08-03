@@ -1,436 +1,291 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en-AU" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Home Energy Audits & Tariff Optimisation | Australia</title>
-    <meta name="description" content="Independent solar, battery, and electricity plan audits for Australian homeowners. Optimise your rates, schedule native apps, and lower your energy bills.">
-    
-    <!-- Geo & Regional Tags -->
-    <meta name="geo.region" content="AU">
-    <meta name="geo.placename" content="Australia">
-    <link rel="canonical" href="https://homeenergyarchitect.com.au/">
-
-    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_AU">
-    <meta property="og:url" content="https://homeenergyarchitect.com.au/">
-    <meta property="og:title" content="Stop Wasting Solar & Paying Over the Odds for Energy">
-    <meta property="og:description" content="Independent 12-month smart meter interval data analysis & native app optimization for Tesla, Enphase, Fox ESS, Rheem, and iStore.">
-    <meta property="og:image" content="https://homeenergyarchitect.com.au/assets/og-preview.png">
-    <meta property="og:site_name" content="Home Energy Architect">
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Smart Home Energy Audits & Tariff Optimisation | Australia">
-    <meta name="twitter:description" content="Analyse 12 months of smart meter interval data and configure battery/hot water apps to lower energy bills across Australia.">
-    <meta name="twitter:image" content="https://homeenergyarchitect.com.au/assets/og-preview.png">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- JSON-LD Structured Data for Search Engines & AI Models -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Home Energy Architect",
-      "description": "Independent smart meter interval data auditing, tariff optimization, and native app configuration for Australian solar and battery owners.",
-      "url": "https://homeenergyarchitect.com.au/",
-      "areaServed": [
-        { "@type": "Country", "name": "Australia" },
-        { "@type": "AdministrativeArea", "name": "New South Wales" },
-        { "@type": "AdministrativeArea", "name": "Victoria" },
-        { "@type": "AdministrativeArea", "name": "Queensland" },
-        { "@type": "AdministrativeArea", "name": "South Australia" },
-        { "@type": "AdministrativeArea", "name": "Australian Capital Territory" },
-        { "@type": "AdministrativeArea", "name": "Tasmania" }
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Energy Audit & Optimization Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Diagnose & Design (Plan & Data Audit)",
-              "description": "12-month NEM12 smart meter data analysis, market tariff matching, battery sizing review, and Action Blueprint PDF."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Execute & Tune (Smart System Optimisation)",
-              "description": "Full audit plus native app schedule configuration for inverter, battery, heat pump hardware, and 3 months of bill reviews."
-            }
-          }
-        ]
-      }
-    }
-    </script>
-
-    <!-- JSON-LD FAQ Schema for AI Search & Featured Snippets -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What data is required for a smart energy audit in Australia?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We analyze 12 months of historical 5-minute or 30-minute interval data (NEM12 CSV format) downloaded from your electricity retailer portal, combined with your latest PDF power bill."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is my personal data safe during an energy audit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. All personal identifiers such as full names, street addresses, and account numbers are stripped prior to mathematical processing and analysis."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which battery and hot water brands do you support?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We support native app optimization for major inverter, battery, and heat pump brands including Tesla Powerwall, Enphase, Fox ESS, Sungrow, Fronius, Sigenergy, Rheem, iStore, and Reclaim."
-          }
-        }
-      ]
-    }
-    </script>
-
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://umami-mauve-two.vercel.app; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; connect-src https://plcrljomerrqygxmayxy.supabase.co https://umami-mauve-two.vercel.app;">
+    <title>Home Energy Architect | Independent Energy Audits & Optimisation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Umami Tracking Script -->
+    <script defer src="https://umami-mauve-two.vercel.app/script.js" data-website-id="0809ae54-4822-4d8a-a1fb-b497ba51da6b"></script>
     <style>
-        :root {
-            --primary: #0f172a;
-            --primary-accent: #2563eb;
-            --emerald: #059669;
-            --emerald-bg: #ecfdf5;
-            --slate-50: #f8fafc;
-            --slate-100: #f1f5f9;
-            --slate-200: #e2e8f0;
-            --slate-600: #475569;
-            --slate-800: #1e293b;
-            --slate-900: #0f172a;
-            --radius: 12px;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        }
-
-        body {
-            background-color: var(--slate-50);
-            color: var(--slate-800);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        header {
-            background: white;
-            border-bottom: 1px solid var(--slate-200);
-            padding: 1.25rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: var(--slate-900);
-            letter-spacing: -0.02em;
-        }
-
-        .logo span {
-            color: var(--primary-accent);
-        }
-
-        .badge-aus {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--slate-100);
-            color: var(--slate-600);
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            border: 1px solid var(--slate-200);
-        }
-
-        .hero {
-            max-width: 1100px;
-            margin: 4rem auto 2rem auto;
-            padding: 0 1.5rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.75rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            color: var(--slate-900);
-            line-height: 1.2;
-            margin-bottom: 1.25rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--slate-600);
-            max-width: 750px;
-            margin: 0 auto 2.5rem auto;
-        }
-
-        .privacy-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--emerald-bg);
-            color: var(--emerald);
-            font-size: 0.875rem;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            margin-bottom: 3rem;
-            border: 1px solid rgba(5, 150, 105, 0.2);
-        }
-
-        /* Pricing/Services Section */
-        .pricing-section {
-            max-width: 1000px;
-            margin: 0 auto 5rem auto;
-            padding: 0 1.5rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            align-items: stretch;
-        }
-
-        .card {
-            background: white;
-            border-radius: var(--radius);
-            border: 1px solid var(--slate-200);
-            padding: 2.5rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: var(--shadow);
-            position: relative;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-        }
-
-        .card.featured {
-            border: 2px solid var(--primary-accent);
-        }
-
-        .card-tag {
-            position: absolute;
-            top: -12px;
-            right: 24px;
-            background: var(--primary-accent);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            letter-spacing: 0.05em;
-        }
-
-        .card-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--slate-900);
-            margin-bottom: 0.5rem;
-        }
-
-        .card-header .subtitle {
-            font-size: 0.9rem;
-            color: var(--slate-600);
-            min-height: 2.7rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .features-list li {
-            position: relative;
-            padding-left: 1.75rem;
-            margin-bottom: 0.85rem;
-            font-size: 0.95rem;
-            color: var(--slate-800);
-        }
-
-        .features-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--emerald);
-            font-weight: 800;
-        }
-
-        .note-box {
-            background: var(--slate-50);
-            border-left: 3px solid var(--primary-accent);
-            padding: 0.75rem 1rem;
-            font-size: 0.825rem;
-            color: var(--slate-600);
-            border-radius: 0 6px 6px 0;
-            margin-top: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            padding: 0.875rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: background-color 0.2s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-        }
-
-        .btn-secondary {
-            background-color: var(--slate-100);
-            color: var(--slate-900);
-            border: 1px solid var(--slate-200);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--slate-200);
-        }
-
-        footer {
-            background: white;
-            border-top: 1px solid var(--slate-200);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            font-size: 0.875rem;
-            color: var(--slate-600);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
 
-    <header>
-        <div class="nav-container">
-            <div class="logo">Home Energy <span>Architect</span></div>
-            <div class="badge-aus">🇦🇺 Serving All NEM States (NSW, VIC, QLD, SA, ACT, TAS)</div>
+    <!-- HEADER -->
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-black text-xl">⚡</div>
+                <span class="font-extrabold text-lg tracking-tight text-slate-100">Home Energy <span class="text-emerald-400">Architect</span></span>
+            </div>
+            <a href="#audit-form" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-lg transition-all active:scale-[0.98]">
+                Get Audited
+            </a>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Stop Wasting Solar & Paying Over the Odds for Energy</h1>
-            <p>Independent smart meter data analysis, energy tariff matching, and native hardware optimization for Australian homeowners.</p>
-            
-            <div class="privacy-pill">
-                🔒 100% Secure & Bank-Grade Private: Personal details are stripped prior to data processing.
-            </div>
-        </section>
+    <!-- HERO SECTION -->
+    <section class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+        <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-8 border border-emerald-500/20 shadow-inner">
+            100% Independent • Zero Hardware Sales
+        </div>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-8 leading-tight">
+            Spent thousands on solar but <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">still getting high power bills?</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+            Even modern solar and battery systems rarely deliver maximum ROI out of the box. Whether you're optimizing an existing setup or designing a new system before buying hardware, we analyze your raw interval data to eliminate grid dependencies and maximize returns.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#audit-form" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-base font-extrabold px-8 py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
+                Join the Audit Queue
+            </a>
+            <a href="#how-it-works" class="bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 text-base font-semibold px-8 py-4 rounded-xl transition-all">
+                How It Works
+            </a>
+        </div>
+    </section>
 
-        <section class="pricing-section">
+    <!-- PROBLEM / PROOF SECTION -->
+    <section class="border-y border-slate-800/80 bg-slate-900/40 py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">Where energy setups lose their edge</h2>
+            <p class="text-slate-400 text-sm text-center max-w-2xl mx-auto mb-12">Hardware gets installed for day one, but retail markets and household habits shift every month.</p>
             
-            <!-- Option A: Diagnose & Design -->
-            <div class="card">
-                <div>
-                    <div class="card-header">
-                        <h2>Diagnose & Design</h2>
-                        <div class="subtitle">The Plan & Data Audit — find your optimal retailer and stop leaking power.</div>
-                    </div>
-                    
-                    <ul class="features-list">
-                        <li><strong>12-Month Smart Meter Data Analysis:</strong> Detailed processing of your 5-min or 30-min NEM12 interval data.</li>
-                        <li><strong>Market Tariff Matching:</strong> Direct math-driven comparison against active plans across your network region.</li>
-                        <li><strong>System & Battery Sizing Review:</strong> Independent quote assessment or battery payback feasibility check.</li>
-                        <li><strong>Personalised Action Blueprint:</strong> High-impact PDF report highlighting exact savings and recommended load-shifting windows.</li>
-                    </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- CARD 1 -->
+                <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
+                    <div class="text-amber-400 text-2xl mb-3">⚙️</div>
+                    <h3 class="text-lg font-bold mb-2">Standard vs. Tailored Config</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Installers focus on hardware, safety, and compliance—not ongoing tariff arbitrage. Without deliberate schedule tuning, batteries and smart appliances often charge from the grid at the wrong time or discharge prematurely.
+                    </p>
                 </div>
                 
-                <a href="#onboard" class="btn btn-secondary">Get Started</a>
-            </div>
-
-            <!-- Option B: Execute & Tune -->
-            <div class="card featured">
-                <div class="card-tag">Most Popular</div>
-                <div>
-                    <div class="card-header">
-                        <h2>Execute & Tune</h2>
-                        <div class="subtitle">Audit + Full System Optimisation — remote app configuration & 3 months of tracking.</div>
-                    </div>
-                    
-                    <ul class="features-list">
-                        <li><strong>Includes Everything in Diagnose & Design.</strong></li>
-                        <li><strong>Native App & Cloud Configuration:</strong> Hands-on schedule setup across major brands including <em>Tesla, Enphase, Fox ESS, Sungrow, Fronius, Sigenergy, Rheem, iStore, Reclaim</em>, and more.</li>
-                        <li><strong>Automated Solar Soak & Peak Shifting:</strong> Optimises battery discharge windows, EV charging, and heat pump timers.</li>
-                        <li><strong>3-Month Follow-Up Reviews:</strong> Post-audit checks at Months 1, 2, and 3 to refine schedule settings as tariffs or seasons change.</li>
-                    </ul>
-
-                    <div class="note-box">
-                        <strong>Note on Hot Water:</strong> Works directly via native Wi-Fi/app control (iStore, Rheem, Reclaim, etc.). For standard non-smart electric tanks without Wi-Fi, we provide exact recommended windows for your switchboard timer.
-                    </div>
+                <!-- CARD 2 -->
+                <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
+                    <div class="text-amber-400 text-2xl mb-3">🧠</div>
+                    <h3 class="text-lg font-bold mb-2">The Analysis Overhead</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Finding the optimal plan requires cross-referencing 5-minute interval data against dozens of complex Time-of-Use and Solar Sponge tariffs. It’s tedious work that most homeowners simply don't have the time to do.
+                    </p>
                 </div>
                 
-                <a href="#onboard" class="btn btn-primary">Book Full Optimisation</a>
+                <!-- CARD 3 -->
+                <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
+                    <div class="text-amber-400 text-2xl mb-3">📊</div>
+                    <h3 class="text-lg font-bold mb-2">Evolving Tariff Rules</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        As feed-in tariffs drop and dynamic pricing expands, settings that saved money two years ago may now cause financial leakage. Without periodic reviews, returns silently drift downward.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES SLIDER SECTION -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Real Household Outcomes</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Proven Transformation Examples</h2>
+                <p class="text-slate-400 text-sm max-w-xl">Swipe through real-world client results from tariff matching and schedule tuning.</p>
+            </div>
+            
+            <!-- CONTROLS: HIDDEN ON MOBILE, VISIBLE ON DESKTOP -->
+            <div class="hidden md:flex items-center gap-4">
+                <div class="flex gap-2">
+                    <button onclick="scrollSlider(-1)" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Previous Slide">
+                        ←
+                    </button>
+                    <button onclick="scrollSlider(1)" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Next Slide">
+                        →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- HORIZONTAL SLIDER CONTAINER -->
+        <div id="case-studies-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 scroll-smooth">
+            
+            <!-- EXAMPLE 1 -->
+            <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">Existing Setup Tuning</span>
+                        <span class="text-xs font-extrabold text-emerald-400">95% Daily Reduction</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-100 mb-2">$15/d ➔ $0.81/d</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        Customer had a solar + battery system installed but was inexplicably paying $15/d due to unconfigured factory default schedules.
+                    </p>
+                </div>
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-emerald-400 border-b border-slate-800 pb-2">The Solution:</p>
+                    <p>• Tuned battery charge/discharge schedule to protect peak periods.</p>
+                    <p>• Matched household usage profile with an optimal Time-of-Use tariff plan.</p>
+                </div>
             </div>
 
-        </section>
-    </main>
+            <!-- EXAMPLE 2 -->
+            <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">New System Blueprint</span>
+                        <span class="text-xs font-extrabold text-emerald-400">+$60/m Credit</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-100 mb-2">$200/m Bill ➔ $60/m Credit</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        Customer received installer quotes that were overpriced and undersized. We designed an independent system blueprint to meet their zero-bill goal.
+                    </p>
+                </div>
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-emerald-400 border-b border-slate-800 pb-2">The Solution:</p>
+                    <p>• Recommended optimal hardware sizing to avoid overpaying on equipment.</p>
+                    <p>• Aligned tariff selection and battery automation schedules with daily habits.</p>
+                </div>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 Home Energy Architect. Independent energy audits & tariff optimization across Australia.</p>
-    </footer>
+            <!-- EXAMPLE 3 -->
+            <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">Solar-Only Upgrade</span>
+                        <span class="text-xs font-extrabold text-emerald-400">+$70/m Credit</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-100 mb-2">Zero Value Export ➔ $70/m Credit</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        Customer had 6.6kW solar exporting for minimal return while importing expensive peak grid power every evening.
+                    </p>
+                </div>
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-emerald-400 border-b border-slate-800 pb-2">The Solution:</p>
+                    <p>• Sized retrofit battery and switched to a high-value battery tariff plan.</p>
+                    <p>• Tuned battery storage schedules and hot water timer to absorb daytime solar.</p>
+                </div>
+            </div>
 
-</body>
-</html>
+        </div>
+
+        <!-- SWIPE INSTRUCTION HINT FOR MOBILE ONLY -->
+        <div class="flex items-center justify-center gap-2 text-slate-500 text-xs mt-4 lg:hidden">
+            <span>👈 Swipe to view more cases 👉</span>
+        </div>
+
+        <!-- ACTIVE DOT INDICATORS -->
+        <div class="flex justify-center items-center gap-2 mt-6">
+            <span class="dot-indicator w-2.5 h-2.5 rounded-full bg-emerald-400 transition-all"></span>
+            <span class="dot-indicator w-2.5 h-2.5 rounded-full bg-slate-800 transition-all"></span>
+            <span class="dot-indicator w-2.5 h-2.5 rounded-full bg-slate-800 transition-all"></span>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS (OUR 2-STEP APPROACH) -->
+    <section id="how-it-works" class="max-w-5xl mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Our 2-Step Framework</h2>
+            <p class="text-slate-400 text-base max-w-xl mx-auto">We don't sell hardware or do physical wiring. We optimize what you own or guide what you buy.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- STEP 1 CARD -->
+            <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 relative flex flex-col justify-between">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase px-3 py-1 rounded-full mb-4 border border-emerald-500/20">
+                        Step 1
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-100">DIAGNOSE & DESIGN</h3>
+                    <h4 class="text-sm font-semibold text-emerald-400 mb-4">The Data & Tariff Audit</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        We extract your raw 12-month smart meter interval data to pinpoint background loads and match your profile against current market tariffs. Planning to buy hardware? We provide unbiased battery sizing and quote reviews.
+                    </p>
+                </div>
+                <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Raw Interval Data & Tariff Matching</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Independent Battery Sizing & Quote Review</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Plain-English Action Blueprint</li>
+                </ul>
+            </div>
+
+            <!-- STEP 2 CARD -->
+            <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 relative flex flex-col justify-between">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-teal-500/10 text-teal-400 text-xs font-bold uppercase px-3 py-1 rounded-full mb-4 border border-teal-500/20">
+                        Step 2
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-100">EXECUTE & TUNE</h3>
+                    <h4 class="text-sm font-semibold text-teal-400 mb-4">Native System Optimisation</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        We dive into your native cloud apps (Tesla, Enphase, Fox ESS, Rheem, Tapo plugs) to configure schedules, hot water timers, and load-shifting logic. Includes 3 months of bill reviews (Months 1, 2, and 3) to fine-tune settings.
+                    </p>
+                </div>
+                <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                    <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> App, Inverter & Hot Water Schedule Tuning</li>
+                    <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> Automated Load & Peak Shifting</li>
+                    <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> 3-Month Follow-Up Support Included</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-center pt-6">
+            <a href="#audit-form" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-base font-extrabold px-8 py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
+                Request Your Initial Audit
+            </a>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section id="audit-form" class="max-w-xl mx-auto px-6 pb-20 pt-8">
+        <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl relative">
+
+            <div id="form-container">
+                <h2 class="text-2xl font-bold mb-2 text-center text-slate-100">Get Your Energy Data Checked</h2>
+                <p class="text-slate-400 text-sm text-center mb-6">Join the queue for our initial audit cohort.</p>
+
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 mb-6 text-xs text-slate-400 text-center">
+                    🇦🇺 Available for households in competitive AEMO regions (<strong class="text-emerald-400">ACT, NSW, QLD, SA, VIC</strong>).
+                </div>
+
+                <div class="space-y-4">
+                    <!-- HONEYPOT FIELD -->
+                    <div class="hidden" aria-hidden="true">
+                        <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Full Name</label>
+                        <input type="text" id="full_name" maxlength="100" placeholder="e.g. Alex Smith" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Email Address</label>
+                        <input type="email" id="email" maxlength="255" placeholder="alex@example.com.au" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">State / Territory</label>
+                            <select id="state" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
+                                <option value="" disabled selected>Select...</option>
+                                <option value="NSW">NSW</option>
+                                <option value="VIC">VIC</option>
+                                <option value="QLD">QLD (SE QLD)</option>
+                                <option value="SA">SA</option>
+                                <option value="ACT">ACT</option>
+                                <option value="TAS">TAS</option>
+                                <option value="WA">WA (Regulated)</option>
+                                <option value="NT">NT (Regulated)</option>
+                            </select>
+                        </div>
+
+        
