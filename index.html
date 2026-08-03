@@ -102,8 +102,8 @@
                 <p class="text-slate-400 text-sm max-w-xl">Swipe through real-world client results from tariff matching and schedule tuning.</p>
             </div>
             
-            <!-- CONTROLS & INDICATORS -->
-            <div class="flex items-center gap-4 self-start md:self-auto">
+            <!-- CONTROLS: HIDDEN ON MOBILE, VISIBLE ON DESKTOP -->
+            <div class="hidden md:flex items-center gap-4">
                 <div class="flex gap-2">
                     <button onclick="scrollSlider(-1)" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Previous Slide">
                         ←
@@ -177,9 +177,16 @@
 
         </div>
 
-        <!-- SWIPE INSTRUCTION HINT FOR MOBILE -->
+        <!-- SWIPE INSTRUCTION HINT FOR MOBILE ONLY -->
         <div class="flex items-center justify-center gap-2 text-slate-500 text-xs mt-4 lg:hidden">
             <span>👈 Swipe to view more cases 👉</span>
+        </div>
+
+        <!-- ACTIVE DOT INDICATORS -->
+        <div class="flex justify-center items-center gap-2 mt-6">
+            <span class="dot-indicator w-2.5 h-2.5 rounded-full bg-emerald-400 transition-all"></span>
+            <span class="dot-indicator w-2.5 h-2.5 rounded-full bg-slate-800 transition-all"></span>
+            <span class="dot-indicator w-2.5 h-2.5 rounded-full bg-slate-800 transition-all"></span>
         </div>
     </section>
 
@@ -325,12 +332,50 @@
     </footer>
 
     <script>
-        // SLIDER CONTROL FUNCTION
+        // SLIDER CONTROL FUNCTION (DESKTOP)
         function scrollSlider(direction) {
             const slider = document.getElementById('case-studies-slider');
-            const cardWidth = slider.querySelector('div').offsetWidth + 24; // card width + gap
+            const card = slider.querySelector('div');
+            const gap = 24; // gap-6 in Tailwind = 24px
+            const cardWidth = card.offsetWidth + gap;
             slider.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
         }
+
+        // DYNAMIC DOT HIGHLIGHT VIA INTERSECTION OBSERVER
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('case-studies-slider');
+            const cards = slider ? slider.querySelectorAll('#case-studies-slider > div') : [];
+            const dots = document.querySelectorAll('.dot-indicator');
+
+            if (cards.length > 0 && dots.length > 0) {
+                const observerOptions = {
+                    root: slider,
+                    threshold: 0.6 // Trigger when 60% of the card is visible in the slider window
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Find index of visible card
+                            const activeIndex = Array.from(cards).indexOf(entry.target);
+                            
+                            // Update dots
+                            dots.forEach((dot, index) => {
+                                if (index === activeIndex) {
+                                    dot.classList.remove('bg-slate-800');
+                                    dot.classList.add('bg-emerald-400');
+                                } else {
+                                    dot.classList.remove('bg-emerald-400');
+                                    dot.classList.add('bg-slate-800');
+                                }
+                            });
+                        }
+                    });
+                }, observerOptions);
+
+                cards.forEach(card => observer.observe(card));
+            }
+        });
 
         // FORM SUBMISSION FUNCTION
         async function executeSubmit() {
