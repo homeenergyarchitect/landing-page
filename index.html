@@ -8,6 +8,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Umami Tracking Script -->
     <script defer src="https://umami-mauve-two.vercel.app/script.js" data-website-id="0809ae54-4822-4d8a-a1fb-b497ba51da6b"></script>
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
 
@@ -15,7 +26,9 @@
     <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-black text-xl">⚡</div>
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-black text-xl">
+                    <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
                 <span class="font-extrabold text-lg tracking-tight text-slate-100">Home Energy <span class="text-emerald-400">Architect</span></span>
             </div>
             <a href="#audit-form" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-xl shadow-lg transition-all active:scale-[0.98]">
@@ -27,14 +40,31 @@
     <!-- HERO SECTION -->
     <section class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
         <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-8 border border-emerald-500/20 shadow-inner">
-            100% Independent • Zero Hardware Sales
+            🇦🇺 100% Independent Australian Advisory • Zero Hardware Sales
         </div>
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-8 leading-tight">
-            Spent thousands on solar but <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">still getting high power bills?</span>
+            Spent thousands on solar but <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-300 to-sky-400">still getting high power bills?</span>
         </h1>
-        <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Even modern solar and battery systems rarely deliver maximum ROI out of the box. Unless your gear is actively synced to your household routine and local network tariffs, financial leakages quietly compound. We analyse your raw interval data and tune your native software to bridge the gap.
-        </p>
+        
+        <!-- BULLET POINTS CONTAINER -->
+        <div class="max-w-2xl mx-auto mb-10 text-left bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-lg">
+            <p class="text-slate-200 font-bold mb-4 text-center sm:text-left text-base">We analyse your household smart meter data to help you:</p>
+            <ul class="space-y-3.5 text-sm md:text-base text-slate-300">
+                <li class="flex items-start gap-3">
+                    <span class="text-emerald-400 font-bold text-lg leading-none">✓</span>
+                    <span><strong>Save Money:</strong> Match your real usage to the cheapest electricity plan and stop money leaking to the grid.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-emerald-400 font-bold text-lg leading-none">✓</span>
+                    <span><strong>Save Time:</strong> Skip the confusing spreadsheets. We handle the raw usage data and power rate comparisons for you.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-emerald-400 font-bold text-lg leading-none">✓</span>
+                    <span><strong>Reach Your Energy Goals:</strong> Tune your battery, hot water, and solar settings so you run on maximum clean power.</span>
+                </li>
+            </ul>
+        </div>
+
         <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a href="#audit-form" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-base font-extrabold px-8 py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
                 Join the Audit Queue
@@ -49,89 +79,166 @@
     <section class="border-y border-slate-800/80 bg-slate-900/40 py-16">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">Where energy setups lose their edge</h2>
-            <p class="text-slate-400 text-sm text-center max-w-2xl mx-auto mb-12">Hardware gets installed for day one, but retail markets and household habits shift every month.</p>
+            <p class="text-slate-400 text-sm text-center max-w-2xl mx-auto mb-12">Hardware gets installed for day one, but retail power plans and household habits shift every month.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- CARD 1 -->
                 <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
-                    <div class="text-amber-400 text-2xl mb-3">⚙️</div>
-                    <h3 class="text-lg font-bold mb-2">Standard vs. Tailored Config</h3>
+                    <div class="text-emerald-400 text-2xl mb-3">
+                        <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Factory Default Settings</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Installers focus on hardware, safety, and compliance—not ongoing tariff arbitrage. Without deliberate schedule tuning, batteries and smart appliances often charge from the grid at the wrong time or discharge prematurely.
+                        Installers focus on mounting hardware safely—not ongoing tariff matching. Without custom schedule tuning, batteries often charge from expensive grid power or empty too early in the evening.
                     </p>
                 </div>
                 
                 <!-- CARD 2 -->
                 <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
-                    <div class="text-amber-400 text-2xl mb-3">🧠</div>
-                    <h3 class="text-lg font-bold mb-2">The Analysis Overhead</h3>
+                    <div class="text-emerald-400 text-2xl mb-3">
+                        <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Complex Data & Spreadsheets</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Finding the optimal plan requires cross-referencing 5-minute interval data against dozens of complex Time-of-Use and Solar Sponge tariffs. It’s tedious work that most homeowners simply don't have the time to do.
+                        Finding the right electricity plan requires matching 5-minute smart meter data against dozens of peak/off-peak rates and mid-day solar tariffs. It is tedious work that most homeowners do not have time for.
                     </p>
                 </div>
                 
                 <!-- CARD 3 -->
                 <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
-                    <div class="text-amber-400 text-2xl mb-3">📊</div>
-                    <h3 class="text-lg font-bold mb-2">Evolving Tariff Rules</h3>
+                    <div class="text-emerald-400 text-2xl mb-3">
+                        <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Changing Energy Tariffs</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        As feed-in tariffs drop and dynamic pricing expands, settings that saved money two years ago may now cause financial leakage. Without periodic reviews, returns silently drift downward.
+                        As solar export rates drop and dynamic pricing expands, settings that saved money two years ago may now cause quiet losses. Without periodic reviews, savings slowly drift away.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CASE STUDY / REAL EXAMPLE SECTION -->
-    <section class="max-w-4xl mx-auto px-6 py-16">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 relative overflow-hidden shadow-2xl">
-            <div class="absolute -top-12 -right-12 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- CASE STUDIES SLIDER SECTION -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Real Household Outcomes</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Proven Transformation Examples</h2>
+                <p class="text-slate-400 text-sm max-w-xl">Swipe through real-world client results from plan matching and schedule tuning.</p>
+            </div>
             
-            <div class="text-center md:text-left md:flex md:items-center md:justify-between gap-8 mb-8 border-b border-slate-800 pb-6">
-                <div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Real Household Impact</span>
-                    <h3 class="text-2xl font-bold mt-3 text-slate-100">From $15.00/day down to 81¢/day</h3>
+            <!-- CONTROLS: DESKTOP -->
+            <div class="hidden md:flex items-center gap-4">
+                <div class="flex gap-2">
+                    <button onclick="scrollSlider(-1)" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Previous Slide">
+                        ←
+                    </button>
+                    <button onclick="scrollSlider(1)" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Next Slide">
+                        →
+                    </button>
                 </div>
-                <p class="text-slate-400 text-xs md:text-right mt-2 md:mt-0 max-w-xs">
-                    Actual outcome for a customer with an existing solar + battery setup after data audit and app schedule configuration.
-                </p>
+            </div>
+        </div>
+
+        <!-- HORIZONTAL SLIDER CONTAINER -->
+        <div id="case-studies-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 scroll-smooth">
+            
+            <!-- EXAMPLE 1 -->
+            <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">Existing System Setup</span>
+                        <span class="text-xs font-extrabold text-emerald-400">93% Daily Reduction</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2">Reduced from $15 a day to under $1 a day</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        This household had solar and a battery installed, but was still paying $15 every day because the battery was running on unconfigured factory default settings.
+                    </p>
+                </div>
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-emerald-400 border-b border-slate-800 pb-2">How We Fixed It:</p>
+                    <p>• Reprogrammed the battery schedule to protect against expensive peak power rates.</p>
+                    <p>• Switched the home to a much cheaper electricity tariff suited to their habits.</p>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- BEFORE CARD -->
-                <div class="bg-slate-950/80 p-5 rounded-2xl border border-rose-500/20">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Before Optimisation</span>
-                        <span class="text-lg font-black text-rose-400">~$15.00 / day</span>
+            <!-- EXAMPLE 2 -->
+            <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">New System Planning</span>
+                        <span class="text-xs font-extrabold text-emerald-400">Monthly Credit Earned</span>
                     </div>
-                    <ul class="text-xs text-slate-400 space-y-2">
-                        <li class="flex items-start gap-2"><span class="text-rose-400">✕</span> Drawing heavy grid power during peak tariff windows</li>
-                        <li class="flex items-start gap-2"><span class="text-rose-400">✕</span> Battery running on unconfigured default mode</li>
-                        <li class="flex items-start gap-2"><span class="text-rose-400">✕</span> Customer confused why power bills remained high</li>
-                    </ul>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2">From a $200 monthly bill to a $60 monthly credit</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        Before buying hardware, this client brought us their installer quotes. We helped them avoid overpriced equipment and designed a system sized properly for their real needs.
+                    </p>
                 </div>
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-emerald-400 border-b border-slate-800 pb-2">How We Fixed It:</p>
+                    <p>• Sized the system accurately based on forecast usage to avoid overspending on hardware.</p>
+                    <p>• Assessed usage patterns and switched the home to the optimal electricity plan.</p>
+                    <p>• Configured battery automation to export power when solar export rates were highest.</p>
+                </div>
+            </div>
 
-                <!-- AFTER CARD -->
-                <div class="bg-slate-950/80 p-5 rounded-2xl border border-emerald-500/30">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">After Audit & Tuning</span>
-                        <span class="text-lg font-black text-emerald-400">$0.81 / day</span>
+            <!-- EXAMPLE 3 -->
+            <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">Solar Upgrade</span>
+                        <span class="text-xs font-extrabold text-emerald-400">$70/Month Surplus</span>
                     </div>
-                    <ul class="text-xs text-slate-300 space-y-2">
-                        <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> Zero grid draw during expensive peak periods</li>
-                        <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> Battery scheduled specifically for peak protection</li>
-                        <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> Retail plan matched precisely to household profile</li>
-                    </ul>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2">Turned wasted solar into a $70 monthly credit</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        A home with standard solar was sending cheap power back to the grid during the day, then paying top dollar to buy power back every evening.
+                    </p>
+                </div>
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-emerald-400 border-b border-slate-800 pb-2">How We Fixed It:</p>
+                    <p>• Analysed smart meter usage data to switch the home to the cheapest energy plan for their profile.</p>
+                    <p>• Added a battery and moved to a dedicated battery tariff.</p>
+                    <p>• Set up hot water heating timers to absorb excess daytime solar for free.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MOBILE SWIPE HINT -->
+        <div class="flex items-center justify-center gap-2 text-slate-500 text-xs mt-4 lg:hidden">
+            <span>👈 Swipe to view more cases 👉</span>
+        </div>
+    </section>
+
+    <!-- ABOUT US / INDEPENDENT ADVOCACY SECTION -->
+    <section class="border-y border-slate-800/80 bg-slate-900/40 py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-xl flex flex-col md:flex-row gap-8 items-center">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex shrink-0 items-center justify-center text-4xl">
+                    🇦🇺
+                </div>
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Independent Australian Advisory</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold mt-4 mb-3 text-slate-100">Why Home Energy Architect Exists</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Most solar and battery installers are experts at mounting hardware and electrical wiring, but their job stops once the physical system is installed. Nobody stays behind to cross-reference your raw smart meter usage data against evolving energy plans or fine-tune your battery settings.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        We are a 100% independent Australian advisory taking zero commissions from energy retailers, installers, or hardware manufacturers. Our single objective is ensuring your household pays as close to $0 as possible for power.
+                    </p>
+                    <p class="text-slate-500 text-xs italic">
+                        *Note on regional availability: Full tariff matching and usage optimisation are available in competitive market regions across the National Electricity Market (ACT, NSW, SE QLD, SA, VIC, TAS). For Regional QLD (Ergon network), WA, and NT, our service focuses strictly on system schedule tuning and load shifting.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- HOW IT WORKS (OUR 2-STEP APPROACH) -->
-    <section id="how-it-works" class="max-w-5xl mx-auto px-6 py-12">
+    <section id="how-it-works" class="max-w-5xl mx-auto px-6 py-20">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Our 2-Step Framework</h2>
-            <p class="text-slate-400 text-base max-w-xl mx-auto">We don't sell hardware or do physical wiring. We optimise what you already own.</p>
+            <p class="text-slate-400 text-base max-w-xl mx-auto">We do not sell hardware or do physical wiring. We optimise what you own or guide what you buy.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -141,10 +248,10 @@
                     <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase px-3 py-1 rounded-full mb-4 border border-emerald-500/20">
                         Step 1
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-100">DIAGNOSE</h3>
-                    <h4 class="text-sm font-semibold text-emerald-400 mb-4">The Energy & Tariff Audit</h4>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-100">DIAGNOSE & DESIGN</h3>
+                    <h4 class="text-sm font-semibold text-emerald-400 mb-4">The Data & Plan Audit</h4>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        We extract your raw 12-month smart meter interval data to pinpoint background "vampire" loads and match your household profile against current market tariffs (Time-of-Use, Solar Sponge, Dynamic) to stop financial leakage.
+                        We extract your raw 12-month smart meter usage data to pinpoint background loads and match your profile against current market plans. Planning to buy hardware? We provide unbiased battery sizing and quote reviews.
                     </p>
                 </div>
                 <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
@@ -269,6 +376,12 @@
     </footer>
 
     <script>
+        function scrollSlider(direction) {
+            const slider = document.getElementById('case-studies-slider');
+            const scrollAmount = 380; // Approximate card width + gap
+            slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
         async function executeSubmit() {
             // Honeypot check
             if (document.getElementById('website_url').value !== '') {
@@ -286,4 +399,56 @@
 
             if (!fullName || !email || !state || !frustration) {
                 alert("Please fill in all required fields.");
-                re
+                return;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            const payload = {
+                full_name: fullName,
+                email: email,
+                state: state,
+                hardware_setup: document.getElementById('hardware_setup').value,
+                top_frustration: frustration
+            };
+
+            const url = 'https://plcrljomerrqygxmayxy.supabase.co/rest/v1/leads';
+            const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsY3Jsam9tZXJycXlneG1heXh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU1NzY3MjUsImV4cCI6MjEwMTE1MjcyNX0.kqkSViBH57nt4Qj9APVG1jcothdSWmrpwmwnEsI1J-U';
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': apiKey,
+                        'Authorization': 'Bearer ' + apiKey
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok || response.status === 201) {
+                    document.getElementById('form-container').classList.add('hidden');
+                    document.getElementById('success-screen').classList.remove('hidden');
+                } else {
+                    console.error("Database error code:", response.status);
+                    alert("Unable to submit form. Please check your details and try again.");
+                    btn.disabled = false;
+                    btn.textContent = 'Submit to Queue';
+                }
+            } catch (err) {
+                console.error("Network Exception:", err);
+                alert("Network error. Please try again later.");
+                btn.disabled = false;
+                btn.textContent = 'Submit to Queue';
+            }
+        }
+    </script>
+</body>
+</html>
