@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://umami-mauve-two.vercel.app; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; connect-src https://plcrljomerrqygxmayxy.supabase.co https://umami-mauve-two.vercel.app;">
-    <title>Home Energy Architect | Independent Solar & Battery Optimization</title>
+    <title>Home Energy Architect | Independent Energy Audits & Optimisation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Umami Tracking Script -->
     <script defer src="https://umami-mauve-two.vercel.app/script.js" data-website-id="0809ae54-4822-4d8a-a1fb-b497ba51da6b"></script>
@@ -33,7 +33,7 @@
             Spent thousands on solar but <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">still getting high power bills?</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Most Australian residential solar and battery setups are misconfigured, operating on basic factory defaults, or placed on sub-optimal energy tariffs. We analyze your actual smart meter data to unlock hidden savings.
+            Most residential energy setups operate on basic factory defaults or bad tariffs. We inspect your raw smart meter data to diagnose financial waste, then tune your native apps to make your system actually pay off.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a href="#audit-form" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-base font-extrabold px-8 py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
@@ -48,64 +48,84 @@
     <!-- PROBLEM / PROOF SECTION -->
     <section class="border-y border-slate-800/80 bg-slate-900/40 py-16">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">Why your current solar setup isn't paying off</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">Why your current setup isn't paying off</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
                     <div class="text-amber-400 text-2xl mb-3">⚠️</div>
-                    <h3 class="text-lg font-bold mb-2">Default Inverter Profiles</h3>
+                    <h3 class="text-lg font-bold mb-2">Default App Profiles</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Installers are incentivized to get in and out fast. Most batteries run basic self-consumption modes rather than dynamically charging or discharging around variable Wholesale or Peak rates.
+                        Installers get in and out fast. Most batteries and smart appliances run default self-consumption schedules rather than charging or discharging around variable Peak and Solar Sponge rates.
                     </p>
                 </div>
                 <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
                     <div class="text-amber-400 text-2xl mb-3">📉</div>
                     <h3 class="text-lg font-bold mb-2">Outdated Retail Tariffs</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Feed-in tariffs have dropped sharply across AEMO states. Staying on legacy single-rate or poorly matched Time-of-Use plans actively drains your solar ROI.
+                        Feed-in tariffs have dropped sharply. Staying on legacy single-rate or poorly matched Time-of-Use plans quietly drains your solar return on investment every month.
                     </p>
                 </div>
                 <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
                     <div class="text-amber-400 text-2xl mb-3">🤝</div>
                     <h3 class="text-lg font-bold mb-2">Conflicting Incentives</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Energy retailers want to sell you grid power, and solar installers want to sell you hardware. Nobody is looking at your ongoing operational efficiency.
+                        Energy retailers want to sell grid power, and installers want to sell hardware. Nobody is inspecting your ongoing operational software to ensure it delivers real savings.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- HOW IT WORKS -->
+    <!-- HOW IT WORKS (OUR 2-STEP APPROACH) -->
     <section id="how-it-works" class="max-w-5xl mx-auto px-6 py-20">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Independent, Data-Driven Auditing</h2>
-            <p class="text-slate-400 text-base max-w-xl mx-auto">We don't sell panels, inverters, or batteries. We optimize what you already have.</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Our 2-Step Framework</h2>
+            <p class="text-slate-400 text-base max-w-xl mx-auto">We don't sell hardware or do physical wiring. We optimise what you already own.</p>
         </div>
 
-        <div class="space-y-12">
-            <div class="flex flex-col md:flex-row gap-6 items-start">
-                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-extrabold flex items-center justify-center text-xl shrink-0">1</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- STEP 1 CARD -->
+            <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 relative flex flex-col justify-between">
                 <div>
-                    <h3 class="text-xl font-bold mb-2">Interval Data Extraction</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">We guide you through downloading your official 5-minute or 30-minute interval smart meter data straight from your distributor (e.g. Ausgrid, Endeavour, Powercor).</p>
+                    <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase px-3 py-1 rounded-full mb-4 border border-emerald-500/20">
+                        Step 1
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-100">DIAGNOSE</h3>
+                    <h4 class="text-sm font-semibold text-emerald-400 mb-4">The Energy & Tariff Audit</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        We extract your raw 12-month smart meter interval data to pinpoint background "vampire" loads and match your household profile against current market tariffs (Time-of-Use, Solar Sponge, Dynamic) to stop financial leakage.
+                    </p>
                 </div>
+                <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Raw Interval Data Analysis</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Tariff Matching & Comparison</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Plain-English Action Blueprint</li>
+                </ul>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-6 items-start">
-                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-extrabold flex items-center justify-center text-xl shrink-0">2</div>
+            <!-- STEP 2 CARD -->
+            <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 relative flex flex-col justify-between">
                 <div>
-                    <h3 class="text-xl font-bold mb-2">Automated Simulation & Analysis</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">We model your household generation and load profiles across hundreds of retail plan combinations and operational schedules to spot exact points of financial waste.</p>
+                    <div class="inline-flex items-center gap-2 bg-teal-500/10 text-teal-400 text-xs font-bold uppercase px-3 py-1 rounded-full mb-4 border border-teal-500/20">
+                        Step 2
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-100">EXECUTE</h3>
+                    <h4 class="text-sm font-semibold text-teal-400 mb-4">Native System Optimisation</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        We jump into your native cloud apps (Tesla, Enphase, Fox ESS, Rheem, Tapo plugs) to configure schedules and load-shifting logic. Includes 3 months of reviews (Months 1, 2, and 3) to fine-tune settings against your actual bills.
+                    </p>
                 </div>
+                <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                    <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> App & Inverter Schedule Configuration</li>
+                    <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> Automated Load Shifting</li>
+                    <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> 3-Month Follow-Up Support Included</li>
+                </ul>
             </div>
+        </div>
 
-            <div class="flex flex-col md:flex-row gap-6 items-start">
-                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-extrabold flex items-center justify-center text-xl shrink-0">3</div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">Tailored Optimization Blueprint</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">You receive a clear, plain-English report detailing exact inverter schedule adjustments, optimal retail tariffs, and smart home automation tweaks (like Home Assistant integrations) to maximize savings.</p>
-                </div>
-            </div>
+        <div class="text-center pt-6">
+            <a href="#audit-form" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-base font-extrabold px-8 py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
+                Request Your Initial Audit
+            </a>
         </div>
     </section>
 
@@ -122,7 +142,7 @@
                 </div>
 
                 <div class="space-y-4">
-                    <!-- HONEYPOT FIELD (Hidden using Tailwind 'hidden' class to prevent CSP inline style block) -->
+                    <!-- HONEYPOT FIELD -->
                     <div class="hidden" aria-hidden="true">
                         <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
                     </div>
@@ -158,6 +178,7 @@
                             <select id="hardware_setup" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
                                 <option value="solar_only">Solar Only</option>
                                 <option value="solar_and_battery">Solar + Battery</option>
+                                <option value="solar_battery_ev_hp">Solar + Battery + EV / Heat Pump</option>
                                 <option value="considering_battery">Considering a Battery</option>
                             </select>
                         </div>
@@ -187,15 +208,17 @@
 
     <!-- FOOTER -->
     <footer class="border-t border-slate-800 bg-slate-950 py-12 text-center text-slate-500 text-xs">
-        <div class="max-w-6xl mx-auto px-6">
-            <p class="mb-2">© 2026 Home Energy Architect. All rights reserved.</p>
-            <p>100% independent advisory. Not affiliated with any energy retailer or hardware manufacturer.</p>
+        <div class="max-w-6xl mx-auto px-6 space-y-3">
+            <p>© 2026 Home Energy Architect. All rights reserved.</p>
+            <p class="max-w-2xl mx-auto text-slate-600">
+                <strong>Legal Disclaimer:</strong> Home Energy Architect provides independent energy data analysis, tariff advisory, and software configuration. We do not sell, install, or perform physical electrical modifications or wiring. All physical electrical installations must be executed by a licensed electrical contractor.
+            </p>
         </div>
     </footer>
 
     <script>
         async function executeSubmit() {
-            // Honeypot check (Silent failure for bots)
+            // Honeypot check
             if (document.getElementById('website_url').value !== '') {
                 document.getElementById('form-container').classList.add('hidden');
                 document.getElementById('success-screen').classList.remove('hidden');
