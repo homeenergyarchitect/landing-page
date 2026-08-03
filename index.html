@@ -142,9 +142,9 @@
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">New System Blueprint</span>
-                        <span class="text-xs font-extrabold text-emerald-400">+$60/mo Credit</span>
+                        <span class="text-xs font-extrabold text-emerald-400">+$60/m Credit</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-100 mb-2">$200/mo Bill ➔ $60 Credit</h3>
+                    <h3 class="text-xl font-bold text-slate-100 mb-2">$200/m Bill ➔ $60 Credit</h3>
                     <p class="text-slate-400 text-xs leading-relaxed mb-6">
                         Customer received installer quotes that were overpriced and undersized. We designed an independent system blueprint to meet their zero-bill goal.
                     </p>
@@ -161,7 +161,7 @@
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">Solar-Only Upgrade</span>
-                        <span class="text-xs font-extrabold text-emerald-400">+$70/mo Credit</span>
+                        <span class="text-xs font-extrabold text-emerald-400">+$70/m Credit</span>
                     </div>
                     <h3 class="text-xl font-bold text-slate-100 mb-2">Zero Value Export ➔ $70 Credit</h3>
                     <p class="text-slate-400 text-xs leading-relaxed mb-6">
@@ -288,163 +288,4 @@
                             </select>
                         </div>
 
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">System Setup</label>
-                            <select id="hardware_setup" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500">
-                                <option value="solar_only">Solar Only</option>
-                                <option value="solar_and_battery">Solar + Battery</option>
-                                <option value="solar_battery_ev_hp">Solar + Battery + EV / Heat Pump</option>
-                                <option value="considering_battery">Considering Solar / Battery (Quote Review)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Top Energy Frustration</label>
-                        <textarea id="top_frustration" maxlength="1000" rows="3" placeholder="e.g. My bill is high, or I want an independent quote review..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500"></textarea>
-                    </div>
-
-                    <button type="button" onclick="executeSubmit()" id="submit-btn" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
-                        Submit to Queue
-                    </button>
-                </div>
-            </div>
-
-            <!-- SUCCESS SCREEN -->
-            <div id="success-screen" class="hidden text-center py-6">
-                <div class="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl flex items-center justify-center text-emerald-400 text-3xl mx-auto mb-4">✓</div>
-                <h3 class="text-2xl font-bold text-slate-100 mb-2">You're in the Queue!</h3>
-                <p class="text-slate-400 text-sm mb-6">Thanks! We've saved your details and will be in touch shortly.</p>
-                <button onclick="window.location.reload()" class="bg-slate-800 text-slate-200 font-semibold py-3 px-6 rounded-xl border border-slate-700 text-sm hover:bg-slate-700 transition-colors">Submit Another Response</button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-slate-800 bg-slate-950 py-12 text-center text-slate-500 text-xs">
-        <div class="max-w-6xl mx-auto px-6 space-y-3">
-            <p>© 2026 Home Energy Architect. All rights reserved.</p>
-            <p class="max-w-2xl mx-auto text-slate-600">
-                <strong>Legal Disclaimer:</strong> Home Energy Architect provides independent energy data analysis, tariff advisory, and native software configuration. We do not sell, install, or perform physical electrical modifications. All physical installations must be executed by a licensed electrical contractor.
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // SLIDER CONTROL FUNCTION (DESKTOP)
-        function scrollSlider(direction) {
-            const slider = document.getElementById('case-studies-slider');
-            const card = slider.querySelector('div');
-            const gap = 24; // gap-6 in Tailwind = 24px
-            const cardWidth = card.offsetWidth + gap;
-            slider.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-        }
-
-        // DYNAMIC DOT HIGHLIGHT VIA INTERSECTION OBSERVER
-        document.addEventListener('DOMContentLoaded', () => {
-            const slider = document.getElementById('case-studies-slider');
-            const cards = slider ? slider.querySelectorAll('#case-studies-slider > div') : [];
-            const dots = document.querySelectorAll('.dot-indicator');
-
-            if (cards.length > 0 && dots.length > 0) {
-                const observerOptions = {
-                    root: slider,
-                    threshold: 0.6 // Trigger when 60% of the card is visible in the slider window
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            // Find index of visible card
-                            const activeIndex = Array.from(cards).indexOf(entry.target);
-                            
-                            // Update dots
-                            dots.forEach((dot, index) => {
-                                if (index === activeIndex) {
-                                    dot.classList.remove('bg-slate-800');
-                                    dot.classList.add('bg-emerald-400');
-                                } else {
-                                    dot.classList.remove('bg-emerald-400');
-                                    dot.classList.add('bg-slate-800');
-                                }
-                            });
-                        }
-                    });
-                }, observerOptions);
-
-                cards.forEach(card => observer.observe(card));
-            }
-        });
-
-        // FORM SUBMISSION FUNCTION
-        async function executeSubmit() {
-            // Honeypot check
-            if (document.getElementById('website_url').value !== '') {
-                document.getElementById('form-container').classList.add('hidden');
-                document.getElementById('success-screen').classList.remove('hidden');
-                return;
-            }
-
-            const fullName = document.getElementById('full_name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const state = document.getElementById('state').value;
-            const frustration = document.getElementById('top_frustration').value.trim();
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!fullName || !email || !state || !frustration) {
-                alert("Please fill in all required fields.");
-                return;
-            }
-
-            if (!emailRegex.test(email)) {
-                alert("Please enter a valid email address.");
-                return;
-            }
-
-            const btn = document.getElementById('submit-btn');
-            btn.disabled = true;
-            btn.textContent = 'Submitting...';
-
-            const payload = {
-                full_name: fullName,
-                email: email,
-                state: state,
-                hardware_setup: document.getElementById('hardware_setup').value,
-                top_frustration: frustration
-            };
-
-            const url = 'https://plcrljomerrqygxmayxy.supabase.co/rest/v1/leads';
-            const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsY3Jsam9tZXJycXlneG1heXh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU1NzY3MjUsImV4cCI6MjEwMTE1MjcyNX0.kqkSViBH57nt4Qj9APVG1jcothdSWmrpwmwnEsI1J-U';
-
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'apikey': apiKey,
-                        'Authorization': 'Bearer ' + apiKey
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                if (response.ok || response.status === 201) {
-                    document.getElementById('form-container').classList.add('hidden');
-                    document.getElementById('success-screen').classList.remove('hidden');
-                } else {
-                    console.error("Database error code:", response.status);
-                    alert("Unable to submit form. Please check your details and try again.");
-                    btn.disabled = false;
-                    btn.textContent = 'Submit to Queue';
-                }
-            } catch (err) {
-                console.error("Network Exception:", err);
-                alert("Network error. Please try again later.");
-                btn.disabled = false;
-                btn.textContent = 'Submit to Queue';
-            }
-        }
-    </script>
-</body>
-</html>
+        
