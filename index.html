@@ -8,6 +8,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Umami Tracking Script -->
     <script defer src="https://umami-mauve-two.vercel.app/script.js" data-website-id="0809ae54-4822-4d8a-a1fb-b497ba51da6b"></script>
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
 
@@ -33,7 +44,7 @@
             Spent thousands on solar but <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">still getting high power bills?</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Even modern solar and battery systems rarely deliver maximum ROI out of the box. Unless your gear is actively synced to your household routine and local network tariffs, financial leakages quietly compound. We analyse your raw interval data and tune your native software to bridge the gap.
+            Even modern solar and battery systems rarely deliver maximum ROI out of the box. Whether you're optimizing an existing setup or designing a new system before buying hardware, we analyze your raw interval data to eliminate grid dependencies and maximize returns.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a href="#audit-form" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-base font-extrabold px-8 py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
@@ -82,48 +93,93 @@
         </div>
     </section>
 
-    <!-- CASE STUDY / REAL EXAMPLE SECTION -->
-    <section class="max-w-4xl mx-auto px-6 py-16">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 relative overflow-hidden shadow-2xl">
-            <div class="absolute -top-12 -right-12 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- CASE STUDIES SLIDER SECTION -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Real Household Outcomes</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Proven Transformation Examples</h2>
+                <p class="text-slate-400 text-sm max-w-xl">Swipe through real-world client results from tariff matching and schedule tuning.</p>
+            </div>
             
-            <div class="text-center md:text-left md:flex md:items-center md:justify-between gap-8 mb-8 border-b border-slate-800 pb-6">
+            <!-- CONTROLS & INDICATORS -->
+            <div class="flex items-center gap-4 self-start md:self-auto">
+                <div class="flex gap-2">
+                    <button onclick="scrollSlider(-1)" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Previous Slide">
+                        ←
+                    </button>
+                    <button onclick="scrollSlider(1)" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Next Slide">
+                        →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- HORIZONTAL SLIDER CONTAINER -->
+        <div id="case-studies-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 scroll-smooth">
+            
+            <!-- EXAMPLE 1 -->
+            <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
                 <div>
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Real Household Impact</span>
-                    <h3 class="text-2xl font-bold mt-3 text-slate-100">From $15.00/day down to 81¢/day</h3>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">Existing Setup Tuning</span>
+                        <span class="text-xs font-extrabold text-emerald-400">95% Daily Reduction</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-100 mb-2">$15/day ➔ 81¢/day</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        Customer had a solar + battery system installed but was inexplicably paying $15/day due to unconfigured factory default schedules.
+                    </p>
                 </div>
-                <p class="text-slate-400 text-xs md:text-right mt-2 md:mt-0 max-w-xs">
-                    Actual outcome for a customer with an existing solar + battery setup after data audit and app schedule configuration.
-                </p>
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-emerald-400 border-b border-slate-800 pb-2">The Solution:</p>
+                    <p>• Tuned battery charge/discharge schedule to protect peak periods.</p>
+                    <p>• Matched household usage profile with an optimal Time-of-Use tariff plan.</p>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- BEFORE CARD -->
-                <div class="bg-slate-950/80 p-5 rounded-2xl border border-rose-500/20">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Before Optimisation</span>
-                        <span class="text-lg font-black text-rose-400">~$15.00 / day</span>
+            <!-- EXAMPLE 2 -->
+            <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">New System Blueprint</span>
+                        <span class="text-xs font-extrabold text-emerald-400">+$60/mo Credit</span>
                     </div>
-                    <ul class="text-xs text-slate-400 space-y-2">
-                        <li class="flex items-start gap-2"><span class="text-rose-400">✕</span> Drawing heavy grid power during peak tariff windows</li>
-                        <li class="flex items-start gap-2"><span class="text-rose-400">✕</span> Battery running on unconfigured default mode</li>
-                        <li class="flex items-start gap-2"><span class="text-rose-400">✕</span> Customer confused why power bills remained high</li>
-                    </ul>
+                    <h3 class="text-xl font-bold text-slate-100 mb-2">$200/mo Bill ➔ $60 Credit</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        Customer received installer quotes that were overpriced and undersized. We designed an independent system blueprint to meet their zero-bill goal.
+                    </p>
                 </div>
-
-                <!-- AFTER CARD -->
-                <div class="bg-slate-950/80 p-5 rounded-2xl border border-emerald-500/30">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">After Audit & Tuning</span>
-                        <span class="text-lg font-black text-emerald-400">$0.81 / day</span>
-                    </div>
-                    <ul class="text-xs text-slate-300 space-y-2">
-                        <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> Zero grid draw during expensive peak periods</li>
-                        <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> Battery scheduled specifically for peak protection</li>
-                        <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> Retail plan matched precisely to household profile</li>
-                    </ul>
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-emerald-400 border-b border-slate-800 pb-2">The Solution:</p>
+                    <p>• Recommended optimal hardware sizing to avoid overpaying on equipment.</p>
+                    <p>• Aligned tariff selection and battery automation schedules with daily habits.</p>
                 </div>
             </div>
+
+            <!-- EXAMPLE 3 -->
+            <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-950 px-2.5 py-1 rounded-md border border-slate-800">Solar-Only Upgrade</span>
+                        <span class="text-xs font-extrabold text-emerald-400">+$70/mo Credit</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-100 mb-2">Zero Value Export ➔ $70 Credit</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        Customer had 6.6kW solar exporting for minimal return while importing expensive peak grid power every evening.
+                    </p>
+                </div>
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                    <p class="font-semibold text-emerald-400 border-b border-slate-800 pb-2">The Solution:</p>
+                    <p>• Sized retrofit battery and switched to a high-value battery tariff plan.</p>
+                    <p>• Tuned battery storage schedules and hot water timer to absorb daytime solar.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SWIPE INSTRUCTION HINT FOR MOBILE -->
+        <div class="flex items-center justify-center gap-2 text-slate-500 text-xs mt-4 lg:hidden">
+            <span>👈 Swipe to view more cases 👉</span>
         </div>
     </section>
 
@@ -131,7 +187,7 @@
     <section id="how-it-works" class="max-w-5xl mx-auto px-6 py-12">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Our 2-Step Framework</h2>
-            <p class="text-slate-400 text-base max-w-xl mx-auto">We don't sell hardware or do physical wiring. We optimise what you already own.</p>
+            <p class="text-slate-400 text-base max-w-xl mx-auto">We don't sell hardware or do physical wiring. We optimize what you own or guide what you buy.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -141,15 +197,15 @@
                     <div class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase px-3 py-1 rounded-full mb-4 border border-emerald-500/20">
                         Step 1
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-100">DIAGNOSE</h3>
-                    <h4 class="text-sm font-semibold text-emerald-400 mb-4">The Energy & Tariff Audit</h4>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-100">DIAGNOSE & DESIGN</h3>
+                    <h4 class="text-sm font-semibold text-emerald-400 mb-4">The Data & Tariff Audit</h4>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        We extract your raw 12-month smart meter interval data to pinpoint background "vampire" loads and match your household profile against current market tariffs (Time-of-Use, Solar Sponge, Dynamic) to stop financial leakage.
+                        We extract your raw 12-month smart meter interval data to pinpoint background loads and match your profile against current market tariffs. Planning to buy hardware? We provide unbiased battery sizing and quote reviews.
                     </p>
                 </div>
                 <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Raw Interval Data Analysis</li>
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Tariff Matching & Comparison</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Raw Interval Data & Tariff Matching</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Independent Battery Sizing & Quote Review</li>
                     <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Plain-English Action Blueprint</li>
                 </ul>
             </div>
@@ -160,15 +216,15 @@
                     <div class="inline-flex items-center gap-2 bg-teal-500/10 text-teal-400 text-xs font-bold uppercase px-3 py-1 rounded-full mb-4 border border-teal-500/20">
                         Step 2
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-slate-100">EXECUTE</h3>
+                    <h3 class="text-2xl font-bold mb-3 text-slate-100">EXECUTE & TUNE</h3>
                     <h4 class="text-sm font-semibold text-teal-400 mb-4">Native System Optimisation</h4>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        We jump into your native cloud apps (Tesla, Enphase, Fox ESS, Rheem, Tapo plugs) to configure schedules and load-shifting logic. Includes 3 months of reviews (Months 1, 2, and 3) to fine-tune settings against your actual bills.
+                        We dive into your native cloud apps (Tesla, Enphase, Fox ESS, Rheem, Tapo plugs) to configure schedules, hot water timers, and load-shifting logic. Includes 3 months of bill reviews (Months 1, 2, and 3) to fine-tune settings.
                     </p>
                 </div>
                 <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-                    <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> App & Inverter Schedule Configuration</li>
-                    <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> Automated Load Shifting</li>
+                    <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> App, Inverter & Hot Water Schedule Tuning</li>
+                    <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> Automated Load & Peak Shifting</li>
                     <li class="flex items-center gap-2"><span class="text-teal-400">✓</span> 3-Month Follow-Up Support Included</li>
                 </ul>
             </div>
@@ -231,14 +287,14 @@
                                 <option value="solar_only">Solar Only</option>
                                 <option value="solar_and_battery">Solar + Battery</option>
                                 <option value="solar_battery_ev_hp">Solar + Battery + EV / Heat Pump</option>
-                                <option value="considering_battery">Considering a Battery</option>
+                                <option value="considering_battery">Considering Solar / Battery (Quote Review)</option>
                             </select>
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Top Energy Frustration</label>
-                        <textarea id="top_frustration" maxlength="1000" rows="3" placeholder="e.g. My bill is still high..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500"></textarea>
+                        <textarea id="top_frustration" maxlength="1000" rows="3" placeholder="e.g. My bill is high, or I want an independent quote review..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-emerald-500"></textarea>
                     </div>
 
                     <button type="button" onclick="executeSubmit()" id="submit-btn" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
@@ -263,12 +319,20 @@
         <div class="max-w-6xl mx-auto px-6 space-y-3">
             <p>© 2026 Home Energy Architect. All rights reserved.</p>
             <p class="max-w-2xl mx-auto text-slate-600">
-                <strong>Legal Disclaimer:</strong> Home Energy Architect provides independent energy data analysis, tariff advisory, and software configuration. We do not sell, install, or perform physical electrical modifications or wiring. All physical electrical installations must be executed by a licensed electrical contractor.
+                <strong>Legal Disclaimer:</strong> Home Energy Architect provides independent energy data analysis, tariff advisory, and native software configuration. We do not sell, install, or perform physical electrical modifications. All physical installations must be executed by a licensed electrical contractor.
             </p>
         </div>
     </footer>
 
     <script>
+        // SLIDER CONTROL FUNCTION
+        function scrollSlider(direction) {
+            const slider = document.getElementById('case-studies-slider');
+            const cardWidth = slider.querySelector('div').offsetWidth + 24; // card width + gap
+            slider.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+        }
+
+        // FORM SUBMISSION FUNCTION
         async function executeSubmit() {
             // Honeypot check
             if (document.getElementById('website_url').value !== '') {
