@@ -120,24 +120,10 @@
 
     <!-- CASE STUDIES SLIDER SECTION -->
     <section class="max-w-6xl mx-auto px-6 py-20">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-            <div>
-                <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Real Household Outcomes</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Proven Transformation Examples</h2>
-                <p class="text-slate-400 text-sm max-w-xl">Swipe through real-world client results from plan matching and schedule tuning.</p>
-            </div>
-            
-            <!-- CONTROLS: DESKTOP -->
-            <div class="hidden md:flex items-center gap-4">
-                <div class="flex gap-2">
-                    <button onclick="scrollSlider(-1)" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Previous Slide">
-                        ←
-                    </button>
-                    <button onclick="scrollSlider(1)" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-all active:scale-95" aria-label="Next Slide">
-                        →
-                    </button>
-                </div>
-            </div>
+        <div class="mb-10">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Real Household Outcomes</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-2">Proven Transformation Examples</h2>
+            <p class="text-slate-400 text-sm max-w-xl">Swipe through real-world client results from plan matching and schedule tuning.</p>
         </div>
 
         <!-- HORIZONTAL SLIDER CONTAINER -->
@@ -383,12 +369,6 @@
     </footer>
 
     <script>
-        function scrollSlider(direction) {
-            const slider = document.getElementById('case-studies-slider');
-            const scrollAmount = 380; // Approximate card width + gap
-            slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-        }
-
         async function executeSubmit() {
             // Honeypot check
             if (document.getElementById('website_url').value !== '') {
@@ -456,6 +436,39 @@
                 btn.textContent = 'Submit to Queue';
             }
         }
+
+        // DYNAMIC DOT HIGHLIGHT VIA INTERSECTION OBSERVER
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('case-studies-slider');
+            const cards = slider ? slider.querySelectorAll('#case-studies-slider > div') : [];
+            const dots = document.querySelectorAll('.dot-indicator');
+
+            if (cards.length > 0 && dots.length > 0) {
+                const observerOptions = {
+                    root: slider,
+                    threshold: 0.6 // Trigger when 60% of card is visible
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const activeIndex = Array.from(cards).indexOf(entry.target);
+                            dots.forEach((dot, index) => {
+                                if (index === activeIndex) {
+                                    dot.classList.remove('bg-slate-800');
+                                    dot.classList.add('bg-emerald-400');
+                                } else {
+                                    dot.classList.remove('bg-emerald-400');
+                                    dot.classList.add('bg-slate-800');
+                                }
+                            });
+                        }
+                    });
+                }, observerOptions);
+
+                cards.forEach(card => observer.observe(card));
+            }
+        });
     </script>
 </body>
 </html>
