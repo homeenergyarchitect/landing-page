@@ -194,11 +194,11 @@
                 <p class="text-slate-600 text-sm max-w-xl">Real-world client results from plan matching and schedule tuning.</p>
             </div>
 
-            <!-- HORIZONTAL SLIDER CONTAINER -->
-            <div id="case-studies-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 scroll-smooth">
+            <!-- HORIZONTAL SLIDER CONTAINER (GRID ON DESKTOP) -->
+            <div id="case-studies-slider" class="flex lg:grid lg:grid-cols-3 gap-6 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar pb-4 pt-1 scroll-smooth after:content-[''] after:shrink-0 after:w-1 lg:after:hidden">
                 
                 <!-- EXAMPLE 1 -->
-                <article class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-white border border-slate-200 rounded-3xl p-6 flex flex-col justify-between shadow-md">
+                <article class="snap-center shrink-0 w-[85vw] sm:w-[420px] lg:w-full bg-white border border-slate-200 rounded-3xl p-6 flex flex-col justify-between shadow-md">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-[10px] font-bold uppercase tracking-wider text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">Existing System Setup</span>
@@ -217,7 +217,7 @@
                 </article>
 
                 <!-- EXAMPLE 2 -->
-                <article class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-white border border-slate-200 rounded-3xl p-6 flex flex-col justify-between shadow-md">
+                <article class="snap-center shrink-0 w-[85vw] sm:w-[420px] lg:w-full bg-white border border-slate-200 rounded-3xl p-6 flex flex-col justify-between shadow-md">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-[10px] font-bold uppercase tracking-wider text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">Pre-Purchase Advisory</span>
@@ -237,7 +237,7 @@
                 </article>
 
                 <!-- EXAMPLE 3 -->
-                <article class="snap-center shrink-0 w-[85vw] sm:w-[450px] lg:w-[360px] bg-white border border-slate-200 rounded-3xl p-6 flex flex-col justify-between shadow-md">
+                <article class="snap-center shrink-0 w-[85vw] sm:w-[420px] lg:w-full bg-white border border-slate-200 rounded-3xl p-6 flex flex-col justify-between shadow-md">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-[10px] font-bold uppercase tracking-wider text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">System Upgrade Advisory</span>
@@ -258,8 +258,8 @@
 
             </div>
 
-            <!-- ACTIVE DOT INDICATORS -->
-            <div class="flex justify-center items-center gap-2 mt-6">
+            <!-- ACTIVE DOT INDICATORS (MOBILE / TABLET ONLY) -->
+            <div class="flex lg:hidden justify-center items-center gap-2 mt-6">
                 <span class="dot-indicator w-2.5 h-2.5 rounded-full bg-emerald-600 transition-all"></span>
                 <span class="dot-indicator w-2.5 h-2.5 rounded-full bg-slate-300 transition-all"></span>
                 <span class="dot-indicator w-2.5 h-2.5 rounded-full bg-slate-300 transition-all"></span>
