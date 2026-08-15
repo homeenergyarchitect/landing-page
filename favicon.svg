@@ -1,11 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" xml:space="preserve" width="100%" height="100%">
   <style>
-    /* Default brand colour for light browser tabs */
-    path { fill: #0284c7; }
-
-    /* Optional: Brightens slightly on dark browser tabs for crisp contrast */
+    path { fill: #059669; }
     @media (prefers-color-scheme: dark) {
-      path { fill: #38bdf8; }
+      path { fill: #34d399; }
     }
   </style>
   <g transform="scale(.09375)">
