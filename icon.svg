@@ -12,7 +12,7 @@
           fill="none" stroke="#3D4B55" stroke-width="16" stroke-linecap="square" stroke-linejoin="miter"/>
     
     <!-- Stilted Inner Arch -->
-    <path d="M -54,90 L -54,-10 A 54,54 0 0,1 54,-10 L 54,90" 
+    <path d="M -54,90 L -54,20 A 54,54 0 0,1 54,20 L 54,90" 
           fill="none" stroke="#3D4B55" stroke-width="16" stroke-linecap="square"/>
 
     <!-- Upward Trendline Pulse -->
